@@ -1,0 +1,87 @@
+﻿<Window x:Class="DemoPractice.Windows.ModeratorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoPractice.Windows"
+        mc:Ignorable="d"
+        Title="OOO Parfumer" Height="600" MinHeight="550" Width="1500" MinWidth="1400">
+	
+	<Window.Resources>
+		<Style TargetType="TextBlock" x:Key="TextBlockStyle">
+			<Setter Property="FontSize" Value="40"></Setter>
+			<Setter Property="FontStyle" Value="Normal"></Setter>
+			<Setter Property="FontFamily" Value="Candara"></Setter>
+			<Setter Property="Margin" Value="10"></Setter>
+		</Style>
+
+		<Style TargetType="TextBox" x:Key="TextBoxStyle">
+			<Setter Property="FontSize" Value="40"></Setter>
+			<Setter Property="FontStyle" Value="Normal"></Setter>
+			<Setter Property="FontFamily" Value="Candara"></Setter>
+			<Setter Property="Margin" Value="20"></Setter>
+			<Setter Property="Height" Value="50"></Setter>
+			<Setter Property="Width" Value="300"></Setter>
+		</Style>
+
+		<Style TargetType="Button" x:Key="ButtonStyle">
+			<Setter Property="FontSize" Value="20"></Setter>
+			<Setter Property="FontStyle" Value="Normal"></Setter>
+			<Setter Property="FontFamily" Value="Candara"></Setter>
+			<Setter Property="Margin" Value="10"></Setter>
+			<Setter Property="Background" Value="#A5E887"></Setter>
+			<Setter Property="Foreground" Value="White"></Setter>
+		</Style>
+	</Window.Resources>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+			<ColumnDefinition Width="7*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="100"></RowDefinition>
+			<RowDefinition></RowDefinition>
+		</Grid.RowDefinitions>
+
+		<StackPanel HorizontalAlignment="Center" Grid.Column="0" Grid.RowSpan="2">
+			<TextBlock Style="{StaticResource TextBlockStyle}">
+				Меню
+			</TextBlock>
+
+			<Button Name="MainWindow" Click="MainWindow_Click" Style="{StaticResource ButtonStyle}">
+				Главный экран
+			</Button>
+
+			<Button Name="Exit" Click="Exit_Click" Style="{StaticResource ButtonStyle}">
+				Выход
+			</Button>
+		</StackPanel>
+
+		<TextBlock HorizontalAlignment="Right" Grid.Column="2" Grid.Row="0" Name="UserName" Style="{StaticResource TextBlockStyle}"></TextBlock>
+
+		<DataGrid Name="DataGridProduct" IsReadOnly="true" AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1">
+			<DataGrid.Columns>
+				<DataGridTemplateColumn Header=
+					"Image"
+					Width=
+					"SizeToCells"
+					IsReadOnly="True">
+
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Image Source="{Binding Image}" />
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+
+				<DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding Name	}"/>
+				<DataGridTextColumn Header="Описание" Width="*" Binding="{Binding Description}"/>
+				<DataGridTextColumn Header="Производитель" Width="*" Binding="{Binding Manufacter}"/>
+				<DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Price}"/>
+				<DataGridTextColumn Header="Размер скидки" Width="*" Binding="{Binding Discount}"/>
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</Window>

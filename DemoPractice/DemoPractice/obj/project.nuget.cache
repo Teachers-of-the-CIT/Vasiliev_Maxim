@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wgMpwRqlVvs7PcRn7MM9tEZob8kRbCbxwDwdJdL8BWGX1QJzK7DQ3wZXVzDmA+71qgUJWwAK9wLAnC4rvyrHCg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vasil\\source\\repos\\Vasiliev_Maxim\\DemoPractice\\DemoPractice\\DemoPractice.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vasil\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}
